@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.example</groupId>
 	<artifactId>aws_codebuild_demo</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 	<name>Message Utility Java Sample App</name>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -17,7 +17,22 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
+	<repositories>
+		<repository>
+			<id>demo-domain--codebuild-demo-repo</id>
+			<url>https://demo-domain-156498802103.d.codeartifact.eu-west-1.amazonaws.com/maven/codebuild-demo-repo/</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>demo-domain--codebuild-demo-repo</id>
+			<name>demo-domain--codebuild-demo-repo</name>
+			<url>https://demo-domain-156498802103.d.codeartifact.eu-west-1.amazonaws.com/maven/codebuild-demo-repo/</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>

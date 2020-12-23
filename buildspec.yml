@@ -6,7 +6,8 @@ phases:
       java: corretto11
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain demo-domain --domain-owner 156498802103 --query authorizationToken --output text`
+      - cp maven-settings.xml ~/.m2/settings.xml
   build:
     commands:
       - echo Build started on `date`
