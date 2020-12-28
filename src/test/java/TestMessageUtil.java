@@ -1,5 +1,7 @@
 import static org.junit.Assert.assertEquals;
 
+import java.nio.charset.Charset;
+
 import org.junit.Test;
 
 public class TestMessageUtil {
@@ -18,5 +20,6 @@ public class TestMessageUtil {
     System.out.println("Inside testSalutationMessage()");
     message = "Hi!" + "Robert";
     assertEquals(message,messageUtil.salutationMessage());
+    System.out.println("Default charset = " + Charset.defaultCharset().name());
   }
 }
