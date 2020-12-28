@@ -12,6 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<codeartifact.repository.url>https://demo-domain-156498802103.d.codeartifact.eu-west-1.amazonaws.com/maven/codebuild-demo-repo/</codeartifact.repository.url>
 	</properties>
 
 	<dependencies>
@@ -26,7 +27,7 @@
 	<repositories>
 		<repository>
 			<id>demo-domain--codebuild-demo-repo</id>
-			<url>https://demo-domain-156498802103.d.codeartifact.eu-west-1.amazonaws.com/maven/codebuild-demo-repo/</url>
+			<url>${codeartifact.repository.url}</url>
 		</repository>
 	</repositories>
 
@@ -34,8 +35,13 @@
 		<repository>
 			<id>demo-domain--codebuild-demo-repo</id>
 			<name>demo-domain--codebuild-demo-repo</name>
-			<url>https://demo-domain-156498802103.d.codeartifact.eu-west-1.amazonaws.com/maven/codebuild-demo-repo/</url>
+			<url>${codeartifact.repository.url}</url>
 		</repository>
+		<snapshotRepository>
+			<id>demo-domain--codebuild-demo-repo</id>
+			<name>demo-domain--codebuild-demo-repo</name>
+			<url>${codeartifact.repository.url}</url>
+		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
