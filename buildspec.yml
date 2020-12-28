@@ -6,7 +6,7 @@ phases:
       java: openjdk11
   pre_build:
     commands:
-      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain demo-domain --domain-owner 156498802103 --query authorizationToken --output text`
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain $CODEARTIFACT_DOMAIN --domain-owner $AWS_ACCOUNT_ID --query authorizationToken --output text`
       - export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF8"
       - cp maven-settings.xml ~/.m2/settings.xml
   build:
